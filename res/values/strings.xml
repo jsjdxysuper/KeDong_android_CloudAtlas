@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">KeDong</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    
+    
+    <string name="dayPower">日电量</string>
+    <string name="loadRate">负荷率</string>
+    <string name="hourSum">利用小时数</string>
+    
+    <string name="plantRatioButtonCaption">电厂</string>
+    <string name="unitRatioButtonCaption">机组</string>
+    <string name="curveRatioButtonCaption">曲线</string>
+    <string name="standardRatioButtonCaption">对标</string>
+    <string name="setRatioButtonCaption">设置</string>
+</resources>

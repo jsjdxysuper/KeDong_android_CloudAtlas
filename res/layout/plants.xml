@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <ScrollView 
+        android:orientation="vertical"
+ 	    android:layout_width="fill_parent"
+   		android:layout_height="0dp"
+    	android:layout_weight="12">
+			    <LinearLayout 
+			    	android:orientation="vertical"
+			 	    android:layout_width="fill_parent"
+			   		android:layout_height="fill_parent"
+			    	>
+				    	<TextView
+				          android:text="red"
+				          android:gravity="center_horizontal"
+				          android:background="#aa0000"
+				          android:layout_width="fill_parent"
+				          android:layout_height="300dp"
+				          />
+				      <TextView
+				          android:text="red"
+				          android:gravity="center_horizontal"
+				          android:background="#aa0000"
+				          android:layout_width="fill_parent"
+				          android:layout_height="300dp"
+				          />
+				      <TextView
+				          android:text="red"
+				          android:gravity="center_horizontal"
+				          android:background="#aa0000"
+				          android:layout_width="fill_parent"
+				          android:layout_height="300dp"
+				          />
+				      <TextView
+				          android:text="red"
+				          android:gravity="center_horizontal"
+				          android:background="#aa0000"
+				          android:layout_width="fill_parent"
+				          android:layout_height="300dp"
+				          />
+			   	</LinearLayout>
+ 	</ScrollView>
+ <RadioGroup android:id="@+id/topRadioGroup"
+     android:layout_width="fill_parent"
+     android:layout_weight="1"
+     android:layout_height="0dp" 
+     android:orientation="horizontal">
+     <RadioButton android:id="@+id/rb1"
+         android:layout_width="0dp"
+         android:layout_height="fill_parent"
+         android:gravity="center"
+         android:layout_weight="1"
+         android:background="@layout/togglebutton1"
+         android:button="@null"
+         android:textColor="#ffffff"
+         android:checked="true"
+         android:text="@string/plantRatioButtonCaption"/>
+     
+     <RadioButton android:id="@+id/rb2"
+         android:layout_width="0dp"
+         android:layout_height="fill_parent"
+         android:gravity="center"
+         android:layout_weight="1"
+         android:background="@layout/togglebutton1"
+         android:button="@null"
+         android:textColor="#ffffff"
+         android:text="@string/unitRatioButtonCaption"/>
+     
+     <RadioButton android:id="@+id/rb3"
+         android:layout_width="0dp"
+         android:layout_height="fill_parent"
+         android:gravity="center"
+         android:layout_weight="1"
+         android:background="@layout/togglebutton1"
+         android:button="@null"
+         android:textColor="#ffffff"
+         android:text="@string/curveRatioButtonCaption"/>
+     
+     <RadioButton android:id="@+id/rb4"
+         android:layout_width="0dp"
+         android:layout_height="fill_parent"
+         android:gravity="center"
+         android:layout_weight="1"
+         android:background="@layout/togglebutton1"
+         android:button="@null"
+         android:textColor="#ffffff"
+         android:text="@string/standardRatioButtonCaption"/>
+     
+     <RadioButton android:id="@+id/rb5"
+         android:layout_width="0dp"
+         android:layout_height="fill_parent"
+         android:gravity="center"
+         android:layout_weight="1"
+         android:background="@layout/togglebutton1"
+         android:button="@null"
+         android:textColor="#ffffff"
+         android:text="@string/setRatioButtonCaption"/>
+     "
+ </RadioGroup>"
+
+</LinearLayout>
