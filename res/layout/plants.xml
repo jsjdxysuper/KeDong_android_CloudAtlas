@@ -3,52 +3,30 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-    <ScrollView 
-        android:orientation="vertical"
- 	    android:layout_width="fill_parent"
-   		android:layout_height="0dp"
-    	android:layout_weight="12">
-			    <LinearLayout 
-			    	android:orientation="vertical"
-			 	    android:layout_width="fill_parent"
-			   		android:layout_height="fill_parent"
-			    	>
-				    	<TextView
-				          android:text="red"
-				          android:gravity="center_horizontal"
-				          android:background="#aa0000"
-				          android:layout_width="fill_parent"
-				          android:layout_height="300dp"
-				          />
-				      <TextView
-				          android:text="red"
-				          android:gravity="center_horizontal"
-				          android:background="#aa0000"
-				          android:layout_width="fill_parent"
-				          android:layout_height="300dp"
-				          />
-				      <TextView
-				          android:text="red"
-				          android:gravity="center_horizontal"
-				          android:background="#aa0000"
-				          android:layout_width="fill_parent"
-				          android:layout_height="300dp"
-				          />
-				      <TextView
-				          android:text="red"
-				          android:gravity="center_horizontal"
-				          android:background="#aa0000"
-				          android:layout_width="fill_parent"
-				          android:layout_height="300dp"
-				          />
-			   	</LinearLayout>
- 	</ScrollView>
- <RadioGroup android:id="@+id/topRadioGroup"
+    
+    
+    <fragment
+        android:id="@+id/fragement_plants"
+        android:name="com.example.kedong.FragmentPlants"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
+
+    <fragment
+        android:id="@+id/fragement_uints"
+        android:name="com.example.kedong.FragmentUnits"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
+
+    
+    
+ <RadioGroup android:id="@+id/bottomRg"
      android:layout_width="fill_parent"
      android:layout_weight="1"
      android:layout_height="0dp" 
      android:orientation="horizontal">
-     <RadioButton android:id="@+id/rb1"
+     <RadioButton android:id="@+id/rbPlants"
          android:layout_width="0dp"
          android:layout_height="fill_parent"
          android:gravity="center"
@@ -59,7 +37,7 @@
          android:checked="true"
          android:text="@string/plantRatioButtonCaption"/>
      
-     <RadioButton android:id="@+id/rb2"
+     <RadioButton android:id="@+id/rbUnits"
          android:layout_width="0dp"
          android:layout_height="fill_parent"
          android:gravity="center"
@@ -69,7 +47,7 @@
          android:textColor="#ffffff"
          android:text="@string/unitRatioButtonCaption"/>
      
-     <RadioButton android:id="@+id/rb3"
+     <RadioButton android:id="@+id/rbCurves"
          android:layout_width="0dp"
          android:layout_height="fill_parent"
          android:gravity="center"
@@ -79,7 +57,7 @@
          android:textColor="#ffffff"
          android:text="@string/curveRatioButtonCaption"/>
      
-     <RadioButton android:id="@+id/rb4"
+     <RadioButton android:id="@+id/rbStandard"
          android:layout_width="0dp"
          android:layout_height="fill_parent"
          android:gravity="center"
@@ -89,7 +67,7 @@
          android:textColor="#ffffff"
          android:text="@string/standardRatioButtonCaption"/>
      
-     <RadioButton android:id="@+id/rb5"
+     <RadioButton android:id="@+id/rbSet"
          android:layout_width="0dp"
          android:layout_height="fill_parent"
          android:gravity="center"
@@ -98,7 +76,7 @@
          android:button="@null"
          android:textColor="#ffffff"
          android:text="@string/setRatioButtonCaption"/>
-     "
- </RadioGroup>"
+     
+ </RadioGroup>
 
 </LinearLayout>

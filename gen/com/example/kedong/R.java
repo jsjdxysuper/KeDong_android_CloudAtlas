@@ -27,18 +27,19 @@ public final class R {
         public static final int refreshall=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f080007;
-        public static final int container=0x7f080000;
-        public static final int rb1=0x7f080002;
-        public static final int rb2=0x7f080003;
-        public static final int rb3=0x7f080004;
-        public static final int rb4=0x7f080005;
-        public static final int rb5=0x7f080006;
-        public static final int topRadioGroup=0x7f080001;
+        public static final int action_settings=0x7f080008;
+        public static final int bottomRg=0x7f080002;
+        public static final int fragement_plants=0x7f080000;
+        public static final int fragement_uints=0x7f080001;
+        public static final int rbCurves=0x7f080005;
+        public static final int rbPlants=0x7f080003;
+        public static final int rbSet=0x7f080007;
+        public static final int rbStandard=0x7f080006;
+        public static final int rbUnits=0x7f080004;
     }
     public static final class layout {
-        public static final int activity_plants=0x7f030000;
-        public static final int fragment_plants=0x7f030001;
+        public static final int fragment_plants=0x7f030000;
+        public static final int fragment_units=0x7f030001;
         public static final int plants=0x7f030002;
         public static final int togglebutton1=0x7f030003;
     }
