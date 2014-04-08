@@ -18,10 +18,8 @@ public class PlantsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.plants);
-
-
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu){
 		super.onCreateOptionsMenu(menu);
@@ -36,12 +34,12 @@ public class PlantsActivity extends Activity {
 			mnu1.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
 		}
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
 		return MenuChoice(item);
 	}
-	
+
 	private boolean MenuChoice(MenuItem item){
 		switch(item.getItemId()){
 		case 0:
