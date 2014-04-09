@@ -19,7 +19,27 @@
         android:layout_height="0dp"
         android:layout_weight="10" />
 
+    <fragment
+        android:id="@+id/fragement_curves"
+        android:name="com.example.kedong.FragmentCurves"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
     
+    
+    <fragment
+        android:id="@+id/fragement_standard"
+        android:name="com.example.kedong.FragmentStandard"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
+    
+    <fragment
+        android:id="@+id/fragement_set"
+        android:name="com.example.kedong.FragmentSet"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
     
  <RadioGroup android:id="@+id/bottomRg"
      android:layout_width="fill_parent"

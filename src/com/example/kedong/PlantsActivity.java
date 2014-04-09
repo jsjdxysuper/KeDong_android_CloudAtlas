@@ -30,16 +30,25 @@ public class PlantsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.plants);
 		
-		mFragments = new Fragment[2];
+		mFragments = new Fragment[5];
 		fragmentManager = getFragmentManager();
 		mFragments[0] = fragmentManager
 				.findFragmentById(R.id.fragement_plants);
 		mFragments[1] = fragmentManager
 				.findFragmentById(R.id.fragement_uints);
-		
+		mFragments[2] = fragmentManager
+				.findFragmentById(R.id.fragement_curves);
+		mFragments[3] = fragmentManager
+				.findFragmentById(R.id.fragement_standard);
+		mFragments[4] = fragmentManager
+				.findFragmentById(R.id.fragement_set);
+ 		
 		fragmentTransaction = fragmentManager.beginTransaction();
 		fragmentTransaction.hide(mFragments[0]);
 		fragmentTransaction.hide(mFragments[1]);
+		fragmentTransaction.hide(mFragments[2]);
+		fragmentTransaction.hide(mFragments[3]);
+		fragmentTransaction.hide(mFragments[4]);
 		fragmentTransaction.show(mFragments[0]).commit();
 		setFragmentIndicator();
 	}
@@ -56,7 +65,9 @@ public class PlantsActivity extends Activity {
 					@Override
 					public void onCheckedChanged(RadioGroup group, int checkedId){
 						fragmentTransaction = fragmentManager.beginTransaction()
-								.hide(mFragments[0]).hide(mFragments[1]);
+								.hide(mFragments[0]).hide(mFragments[1])
+								.hide(mFragments[2]).hide(mFragments[3])
+								.hide(mFragments[4]);
 						
 						switch(checkedId){
 						case R.id.rbPlants:
@@ -64,6 +75,15 @@ public class PlantsActivity extends Activity {
 							break;
 						case R.id.rbUnits:
 							fragmentTransaction.show(mFragments[1]).commit();
+							break;
+						case R.id.rbCurves:
+							fragmentTransaction.show(mFragments[2]).commit();
+							break;
+						case R.id.rbStandard:
+							fragmentTransaction.show(mFragments[3]).commit();
+							break;
+						case R.id.rbSet:
+							fragmentTransaction.show(mFragments[4]).commit();
 							break;
 						default:
 							break;
