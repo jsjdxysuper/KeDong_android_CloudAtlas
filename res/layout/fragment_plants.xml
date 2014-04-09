@@ -5,33 +5,36 @@
     android:layout_width="fill_parent"
     android:layout_weight="10"
     >
+    
     <FrameLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/wind_place1"
+        android:layout_weight="11"
+        >
+        
+        <!-- 电厂信息的显示视图 -->
+        <ScrollView 
+	        android:orientation="vertical"	
 	        android:layout_width="fill_parent"
-	        android:layout_height="0dp"
-	        android:background="@drawable/wind_place1"
-	        android:layout_weight="11"
-	        >
-	        <!-- 电厂信息的显示视图 -->
-	        <ScrollView 
-		        android:orientation="vertical"	
-		        android:layout_width="fill_parent"
-		 	    android:layout_height="fill_parent"
-		    	>
-				<include layout="@layout/plants_content_view"/>
-			</ScrollView>
-			
-	        <!-- 右下角的历史电量信息 -->"
- 				<RelativeLayout
-			   	    android:orientation="vertical"
-			   	    android:layout_gravity="bottom"
-			   	    android:gravity="right"
-			   	    android:layout_width="fill_parent"
-			   	    android:layout_height="fill_parent"
-			   	    >
+	 	    android:layout_height="fill_parent"
+	    	>
+			<include layout="@layout/plants_content_linearlayout_view"/>
+		</ScrollView>
+		
+       		<!-- 右下角的历史电量信息 -->"
+		<RelativeLayout
+	   	    android:orientation="vertical"
+	   	    android:layout_gravity="bottom"
+	   	    android:gravity="right"
+	   	    android:layout_width="fill_parent"
+	   	    android:layout_height="fill_parent">
 
- 				    <include layout="@layout/plants_history_viewdata"/>"
-			   	</RelativeLayout>			   	
-			</FrameLayout>
+		    <include layout="@layout/plants_history_linearlayout_viewdata"/>"
+	   	</RelativeLayout>
+		   	
+	</FrameLayout>
+	<!-- 电厂页面下面显示日电量、负荷率、利用小时数的底部信息界面 -->
  	<LinearLayout 
  	    android:orientation="horizontal"
  	    android:layout_width="fill_parent"
@@ -39,76 +42,8 @@
 		android:layout_weight="1"
  	    android:layout_alignParentBottom="true"
  	    android:background="#ffffff">
- 	    
-	 	    <LinearLayout 
-	 	        android:orientation="vertical"
-	 	    	android:layout_width="0dp"
-	 	    	android:layout_height="fill_parent"
-	 	    	android:layout_weight="1">
-		 	    <TextView
-			          android:text="日电量"
-			          android:gravity="center"
-			          android:background="#ffffff"
-			          android:layout_width="fill_parent"
-			          android:layout_weight="1"
-			          android:layout_height="0dp"
-			          />
-		 	    <TextView
-			          android:text="34"
-			          
-			          android:background="@drawable/textview_style"
-			          android:gravity="center"
-			          android:layout_gravity="center_horizontal"
-			          android:layout_width="40dp"
-			          android:layout_weight="1"
-			          android:layout_height="0dp"
-			          />
-	 	    </LinearLayout>
-	 	    <LinearLayout 
-	 	        android:orientation="vertical"
-	 	    	android:layout_width="0dp"
-	 	    	android:layout_height="fill_parent"
-	 	    	android:layout_weight="1">
-		 	    <TextView
-			          android:text="负荷率"
-			          android:gravity="center"
-			          android:background="#ffffff"
-			          android:layout_width="fill_parent"
-			          android:layout_weight="1"
-			          android:layout_height="0dp"
-			          />
-		 	    <TextView
-			          android:text="34"
-			          android:background="@drawable/textview_style"
-			          android:gravity="center"
-			          android:layout_gravity="center_horizontal"
-			          android:layout_width="40dp"
-			          android:layout_weight="1"
-			          android:layout_height="0dp"
-			          />
-	 	    </LinearLayout>
-	 	    <LinearLayout 
-	 	        android:orientation="vertical"
-	 	    	android:layout_width="0dp"
-	 	    	android:layout_height="fill_parent"
-	 	    	android:layout_weight="1">
-		 	    <TextView
-			          android:text="利用小时数"
-			          android:gravity="center"
-			          android:background="#ffffff"
-			          android:layout_width="fill_parent"
-			          android:layout_weight="1"
-			          android:layout_height="0dp"
-			          />
-		 	    <TextView
-			          android:text="34"
-			          android:background="@drawable/textview_style"
-			          android:gravity="center"
-			          android:layout_gravity="center_horizontal"
-			          android:layout_width="40dp"
-			          android:layout_weight="1"
-			          android:layout_height="0dp"
-			          />
-	 	    </LinearLayout> 	    
- 	    </LinearLayout>
+		
+ 			<include layout="@layout/plants_bottom_parameter_linearlayout_view"/>
+ 	</LinearLayout>
+ 	
 </LinearLayout>
