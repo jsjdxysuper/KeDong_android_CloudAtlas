@@ -10,21 +10,21 @@
         android:name="com.example.kedong.FragmentPlants"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="10" />
+        android:layout_weight="13" />
 
     <fragment
         android:id="@+id/fragement_uints"
         android:name="com.example.kedong.FragmentUnits"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="10" />
+        android:layout_weight="13" />
 
     <fragment
         android:id="@+id/fragement_curves"
         android:name="com.example.kedong.FragmentCurves"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="10" />
+        android:layout_weight="13" />
     
     
     <fragment
@@ -32,14 +32,14 @@
         android:name="com.example.kedong.FragmentStandard"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="10" />
+        android:layout_weight="13" />
     
     <fragment
         android:id="@+id/fragement_set"
         android:name="com.example.kedong.FragmentSet"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="10" />
+        android:layout_weight="13" />
     
  <RadioGroup android:id="@+id/bottomRg"
      android:layout_width="fill_parent"
