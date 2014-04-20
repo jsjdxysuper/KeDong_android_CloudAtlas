@@ -23,38 +23,45 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int refresh=0x7f020001;
-        public static final int refreshall=0x7f020002;
-        public static final int textview_style=0x7f020003;
-        public static final int transparent_textview_style=0x7f020004;
-        public static final int wind_place=0x7f020005;
-        public static final int wind_place1=0x7f020006;
+        public static final int page_indicator=0x7f020001;
+        public static final int page_indicator_focused=0x7f020002;
+        public static final int refresh=0x7f020003;
+        public static final int refreshall=0x7f020004;
+        public static final int textview_style=0x7f020005;
+        public static final int transparent_textview_style=0x7f020006;
+        public static final int wind_place=0x7f020007;
+        public static final int wind_place1=0x7f020008;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000b;
-        public static final int bottomRg=0x7f080005;
-        public static final int fragement_curves=0x7f080002;
-        public static final int fragement_plants=0x7f080000;
-        public static final int fragement_set=0x7f080004;
-        public static final int fragement_standard=0x7f080003;
-        public static final int fragement_uints=0x7f080001;
-        public static final int rbCurves=0x7f080008;
-        public static final int rbPlants=0x7f080006;
-        public static final int rbSet=0x7f08000a;
-        public static final int rbStandard=0x7f080009;
-        public static final int rbUnits=0x7f080007;
+        public static final int action_settings=0x7f08000d;
+        public static final int bottomRg=0x7f080007;
+        public static final int fragement_curves=0x7f080004;
+        public static final int fragement_plants=0x7f080002;
+        public static final int fragement_set=0x7f080006;
+        public static final int fragement_standard=0x7f080005;
+        public static final int fragement_uints=0x7f080003;
+        public static final int plantsFragmentViewPager=0x7f080000;
+        public static final int pointsViewGroup=0x7f080001;
+        public static final int rbCurves=0x7f08000a;
+        public static final int rbPlants=0x7f080008;
+        public static final int rbSet=0x7f08000c;
+        public static final int rbStandard=0x7f08000b;
+        public static final int rbUnits=0x7f080009;
     }
     public static final class layout {
         public static final int fragment_curves=0x7f030000;
-        public static final int fragment_plants=0x7f030001;
-        public static final int fragment_set=0x7f030002;
-        public static final int fragment_standard=0x7f030003;
-        public static final int fragment_units=0x7f030004;
-        public static final int plants=0x7f030005;
-        public static final int plants_bottom_parameter_linearlayout_view=0x7f030006;
-        public static final int plants_content_linearlayout_view=0x7f030007;
-        public static final int plants_history_linearlayout_viewdata=0x7f030008;
-        public static final int togglebutton1=0x7f030009;
+        public static final int fragment_oneplant=0x7f030001;
+        public static final int fragment_plants=0x7f030002;
+        public static final int fragment_set=0x7f030003;
+        public static final int fragment_standard=0x7f030004;
+        public static final int fragment_units=0x7f030005;
+        public static final int plants=0x7f030006;
+        public static final int plants_bottom_parameter_linearlayout_view=0x7f030007;
+        public static final int plants_content_linearlayout_view=0x7f030008;
+        public static final int plants_content_view=0x7f030009;
+        public static final int plants_history_linearlayout_viewdata=0x7f03000a;
+        public static final int plants_history_viewdata=0x7f03000b;
+        public static final int togglebutton1=0x7f03000c;
     }
     public static final class menu {
         public static final int plants=0x7f070000;

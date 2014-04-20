@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_height="0dp"
+    android:layout_width="fill_parent"
+    android:layout_weight="10"
+    >
+    
+    <FrameLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/wind_place1"
+        android:layout_weight="11"
+        >
+        
+        <!-- 电厂信息的显示视图 -->
+        <ScrollView 
+	        android:orientation="vertical"	
+	        android:layout_width="fill_parent"
+	 	    android:layout_height="fill_parent"
+	    	>
+			<include layout="@layout/plants_content_linearlayout_view"/>
+		</ScrollView>
+		
+       		<!-- 右下角的历史电量信息 -->"
+		<RelativeLayout
+	   	    android:orientation="vertical"
+	   	    android:layout_gravity="bottom"
+	   	    android:gravity="right"
+	   	    android:layout_width="fill_parent"
+	   	    android:layout_height="fill_parent">
+
+		    <include layout="@layout/plants_history_linearlayout_viewdata"/>"
+	   	</RelativeLayout>
+	  
+	   <!--  <RelativeLayout  
+	        android:layout_width="fill_parent"  
+	        android:layout_height="fill_parent"  
+	        android:orientation="vertical" >
+		    <LinearLayout  
+		        android:id="@+id/pointViewGroup"  
+		        android:layout_width="fill_parent"  
+		        android:layout_height="wrap_content"  
+		        android:layout_alignParentBottom="true"
+		        android:layout_centerHorizontal="true"
+		        android:layout_marginBottom="50dp"  
+		        android:orientation="horizontal"
+		        android:gravity="center_horizontal">"
+
+		           <TextView 
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="akdjflkasdj"/>
+    		</LinearLayout>  
+    
+    	</RelativeLayout>   -->	
+	</FrameLayout>
+	<!-- 电厂页面下面显示日电量、负荷率、利用小时数的底部信息界面 -->
+ 	<LinearLayout 
+ 	    android:orientation="horizontal"
+ 	    android:layout_width="fill_parent"
+ 	    android:layout_height="0dp"
+		android:layout_weight="1"
+ 	    android:layout_alignParentBottom="true"
+ 	    android:background="#ffffff">
+		
+ 			<include layout="@layout/plants_bottom_parameter_linearlayout_view"/>
+ 	</LinearLayout>
+ 	
+</LinearLayout>
