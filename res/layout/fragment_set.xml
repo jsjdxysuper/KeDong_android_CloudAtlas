@@ -5,11 +5,37 @@
     android:orientation="vertical" >
     
 
-    <TextView
-          android:text="我是设置页面"
+    <Button
+          android:text="意见反馈"
+          android:layout_marginTop="50dp"
+          android:layout_marginLeft="50dp"
           android:gravity="center_horizontal"
-          android:background="#aa00aa"
-          android:layout_width="fill_parent"
-          android:layout_height="fill_parent"
+
+          android:layout_width="130dp"
+          android:layout_height="40dp"
+          />
+    <Button
+          android:text="检测版本"
+          android:layout_marginLeft="50dp"
+          android:gravity="center_horizontal"
+
+          android:layout_width="130dp"
+          android:layout_height="40dp"
+          />
+    <Button
+          android:text="关　　于"
+          android:layout_marginLeft="50dp"          
+          android:gravity="center_horizontal"
+
+          android:layout_width="130dp"
+          android:layout_height="40dp"
+          />
+    <Button
+          android:text="帮　　助"
+          android:layout_marginLeft="50dp"          
+          android:gravity="center_horizontal"
+
+          android:layout_width="130dp"
+          android:layout_height="40dp"
           />
 </LinearLayout>

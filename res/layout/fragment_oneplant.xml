@@ -6,7 +6,8 @@
     android:layout_weight="10"
     >
     
-    <FrameLayout 
+	<FrameLayout 
+	    android:id="@+id/dataFragmentInPlantsFragment"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:background="@drawable/wind_place1"
@@ -33,27 +34,6 @@
 		    <include layout="@layout/plants_history_linearlayout_viewdata"/>"
 	   	</RelativeLayout>
 	  
-	   <!--  <RelativeLayout  
-	        android:layout_width="fill_parent"  
-	        android:layout_height="fill_parent"  
-	        android:orientation="vertical" >
-		    <LinearLayout  
-		        android:id="@+id/pointViewGroup"  
-		        android:layout_width="fill_parent"  
-		        android:layout_height="wrap_content"  
-		        android:layout_alignParentBottom="true"
-		        android:layout_centerHorizontal="true"
-		        android:layout_marginBottom="50dp"  
-		        android:orientation="horizontal"
-		        android:gravity="center_horizontal">"
-
-		           <TextView 
-		            android:layout_width="wrap_content"
-		            android:layout_height="wrap_content"
-		            android:text="akdjflkasdj"/>
-    		</LinearLayout>  
-    
-    	</RelativeLayout>   -->	
 	</FrameLayout>
 	<!-- 电厂页面下面显示日电量、负荷率、利用小时数的底部信息界面 -->
  	<LinearLayout 

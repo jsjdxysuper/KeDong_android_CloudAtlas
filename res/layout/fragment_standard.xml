@@ -1,15 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+	<LinearLayout 
+		android:orientation="vertical"
+		 android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		
 
-    <TextView
-          android:text="我是对标页面"
-          android:gravity="center_horizontal"
-          android:background="#00aa00"
-          android:layout_width="fill_parent"
-          android:layout_height="fill_parent"
-          />
-</LinearLayout>
+	    <LinearLayout 
+	        android:orientation="vertical"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content">
+	        <TextView
+	            android:text="分公司内对标"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_horizontal"
+	            android:layout_gravity="center_horizontal"
+	            android:textSize="20sp"/>
+			<ListView android:id="@+id/list"
+			    android:layout_width="fill_parent"
+				android:layout_height="3000dp"/>
+		</LinearLayout>
+		
+	    <LinearLayout 
+	        android:orientation="vertical"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content">
+	        <TextView
+	            android:text="安全区内对标"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_horizontal"
+	            android:layout_gravity="center_horizontal"
+	            android:textSize="20sp"/>
+			<ListView android:id="@+id/list1"
+			    android:layout_width="fill_parent"
+				android:layout_height="wrap_content"/>
+		</LinearLayout>
+		
+	    <LinearLayout 
+	        android:orientation="vertical"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content">
+	        <TextView
+	            android:text="省内对标"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_horizontal"
+	            android:layout_gravity="center_horizontal"
+	            android:textSize="20sp"/>
+			<ListView android:id="@+id/list2"
+			    android:layout_width="fill_parent"
+				android:layout_height="wrap_content"/>
+			</LinearLayout>
+	</LinearLayout>
+</ScrollView>

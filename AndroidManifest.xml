@@ -22,6 +22,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        
+        <activity
+            android:name="com.example.kedong.MyExpandableListViewTestActivity">
+            <intent-filter>
+                <action android:name="com.example.kedong.MyMainActivity.AddPlants" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+    </application>
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 </manifest>

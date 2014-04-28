@@ -1,7 +1,11 @@
 package com.example.kedong;
 import java.util.ArrayList;
 
+
+import android.R.drawable;
 import android.support.v4.app.FragmentTransaction;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
@@ -11,14 +15,17 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -50,8 +57,9 @@ public class PlantsActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		requestWindowFeature(Window.FEATURE_NO_TITLE);  
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		LayoutInflater inflater = getLayoutInflater();
+		
 		main = (ViewGroup)inflater.inflate(R.layout.fragment_plants, null);
 		
 		
@@ -66,14 +74,20 @@ public class PlantsActivity extends FragmentActivity {
 		//如果把这部分与添加Fragment分开的话，添加的是fragment_plants的静态页面，将会什么都没有
 		//因为ViewPager页面的实现是动态的，仅仅使用xml添加时不能实现动态效果的
 		//也没有想到，Fragment类用getView方法可以获得其ViewGroup类，这样以后就可以这样使用了
-		main = (ViewGroup)mFragments[0].getView();	
-		
-		
-		mPager = (ViewPager) main.findViewById(R.id.plantsFragmentViewPager);
-		
+		main = (ViewGroup)mFragments[0].getView();			
+		mPager = (ViewPager) main.findViewById(R.id.plantsFragmentViewPager);		
 		pageViewsList = new ArrayList<View>();
       
-		pageViewsList.add(inflater.inflate(R.layout.fragment_oneplant, null));
+		ViewGroup tempViewGroup = (ViewGroup)inflater.inflate(R.layout.fragment_oneplant, null);
+		((TextView)(tempViewGroup.findViewById(R.id.dayPowerInPlantsFragment))).setText("2154");
+		((TextView)(tempViewGroup.findViewById(R.id.unitPowerInPlantsFragment1))).setText("铁岭：54");
+		((TextView)(tempViewGroup.findViewById(R.id.unitPowerInPlantsFragment2))).setText("铁岭：56");
+		((TextView)(tempViewGroup.findViewById(R.id.unitPowerInPlantsFragment3))).setText("铁岭：66");
+		((TextView)(tempViewGroup.findViewById(R.id.unitPowerInPlantsFragment4))).setText("铁岭：36");
+		((TextView)(tempViewGroup.findViewById(R.id.yestodayPowerInPlantsFragment))).setText("昨天：2100");
+		((TextView)(tempViewGroup.findViewById(R.id.befYestodayPowerInPlantsFragment))).setText("前天：2090");
+		tempViewGroup.findViewById(R.id.dataFragmentInPlantsFragment).setBackgroundResource(R.drawable.wind_place2);
+		pageViewsList.add(tempViewGroup);
 		pageViewsList.add(inflater.inflate(R.layout.fragment_oneplant, null));
 		pageViewsList.add(inflater.inflate(R.layout.fragment_oneplant, null));
 		pageViewsList.add(inflater.inflate(R.layout.fragment_oneplant, null));	
@@ -83,13 +97,13 @@ public class PlantsActivity extends FragmentActivity {
 		pointViewGroup = (ViewGroup)main.findViewById(R.id.pointsViewGroup);
 		imageViews = new ImageView[pageViewsList.size()];
 		for(int i=0; i<pageViewsList.size(); i++){
-			imageView = new ImageView(this);//能不能换成this
 
-			if(imageView == null)return;
-			imageView.setLayoutParams(new LayoutParams(20,20));
-			imageView.setPadding(20, 0, 20, 0);
-			imageViews[i] = imageView;
 			
+			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(12, 12); 
+			params.setMargins(0, 0,13, 0); 
+			imageView = new ImageView(this); 
+			imageView.setLayoutParams(params);
+			imageViews[i] = imageView;
 			if( i == 0){
 				imageViews[i].setBackgroundResource(R.drawable.page_indicator_focused);
 			}else{
@@ -123,6 +137,39 @@ public class PlantsActivity extends FragmentActivity {
 		fragmentTransaction.hide(mFragments[4]);
 		fragmentTransaction.show(mFragments[0]).commit();
 		setFragmentIndicator();
+		
+		
+		View headerLinearLayoutInPlants = (View)findViewById(R.id.headerLinearLayoutInPlants);
+		headerLinearLayoutInPlants.setClickable(true);
+		headerLinearLayoutInPlants.setFocusable(true);
+		headerLinearLayoutInPlants.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				final String Target_Action = "com.example.kedong.MyMainActivity.AddPlants";
+				Intent intent = new Intent();
+				intent.setAction(Target_Action);
+
+				startActivity(intent);
+			}
+			
+		});
+		
+		View headerRefreshImageInPlants = (View)findViewById(R.id.headerRefreshImageInPlants);
+		headerRefreshImageInPlants.setClickable(true);
+		headerRefreshImageInPlants.setFocusable(true);
+		headerRefreshImageInPlants.setOnClickListener(new View.OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Toast.makeText(PlantsActivity.this, "You Refresh the Data",
+				Toast.LENGTH_SHORT).show();
+//				return true;
+			}
+			
+		});
 	}
 	
 	
@@ -209,9 +256,7 @@ public class PlantsActivity extends FragmentActivity {
 
 		
 		bottomRg = (RadioGroup) findViewById(R.id.bottomRg);
-//		
-//		rbPlants = (RadioButton) findViewById(R.id.rbPlants);
-//		rbUnits = (RadioButton) findViewById(R.id.rbUnits);
+
 		
 		bottomRg.setOnCheckedChangeListener(
 				new OnCheckedChangeListener(){
@@ -250,32 +295,32 @@ public class PlantsActivity extends FragmentActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu){
 		super.onCreateOptionsMenu(menu);
-		CreateMenu(menu);
+//		CreateMenu(menu);
 		return true;
 	}
 
-	private void CreateMenu(Menu menu){
-		MenuItem mnu1 = menu.add(0, 0, 0, "Item 1");
-		{
-			mnu1.setIcon(R.drawable.refresh);
-			mnu1.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-		}
-	}
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item){
-		return MenuChoice(item);
-	}
-	
-	private boolean MenuChoice(MenuItem item){
-		switch(item.getItemId()){
-		case 0:
-			Toast.makeText(this, "You Refresh the Data",
-					Toast.LENGTH_SHORT).show();
-			return true;
-		}
-		return false;
-	}
+//	private void CreateMenu(Menu menu){
+//		MenuItem mnu1 = menu.add(0, 0, 0, "Item 1");
+//		{
+//			mnu1.setIcon(R.drawable.refresh);
+//			mnu1.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+//		}
+//	}
+//	
+//	@Override
+//	public boolean onOptionsItemSelected(MenuItem item){
+//		return MenuChoice(item);
+//	}
+//	
+//	private boolean MenuChoice(MenuItem item){
+//		switch(item.getItemId()){
+//		case 0:
+//			Toast.makeText(this, "You Refresh the Data",
+//					Toast.LENGTH_SHORT).show();
+//			return true;
+//		}
+//		return false;
+//	}
 	
 	
 }

@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     >
     
-    
+    <include layout="@layout/headeraddplants"></include>
     <fragment
         android:id="@+id/fragement_plants"
         android:name="com.example.kedong.FragmentPlants"
