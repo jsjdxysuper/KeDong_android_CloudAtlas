@@ -2,13 +2,16 @@ package com.example.kedong;
 
 import android.support.v4.app.Fragment;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FragmentSet extends Fragment {
 	String TAG = "-----------------------------lifecycle--------------------------";
@@ -16,8 +19,91 @@ public class FragmentSet extends Fragment {
 	public View onCreateView(LayoutInflater inflater,
 			ViewGroup container, Bundle savedInstanceState){
 		
+		//意见反馈监听事件设置
+		ViewGroup viewGroup = (ViewGroup)inflater.inflate(R.layout.fragment_set, container, false);
+		View feedbackLinearViewGroup = (View)viewGroup.findViewById(R.id.feedBackInFragmentSet);
+		feedbackLinearViewGroup.setClickable(true);
+		feedbackLinearViewGroup.setFocusable(true);
+		feedbackLinearViewGroup.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+//				Toast.makeText(getActivity(), "You Refresh the Data",
+//				Toast.LENGTH_SHORT).show();
+				final String Target_Action = "com.example.kedong.FragmentSet.FeedbackActivity";
+				Intent intent = new Intent();
+				intent.setAction(Target_Action);
+
+				startActivityForResult(intent,1);
+			}
+			
+		});
+		
+		
+		
+		//版本检测监听事件设置
+		View versionCheckLinearViewGroup = (View)viewGroup.findViewById(R.id.versionCheckInFragmentSet);
+		versionCheckLinearViewGroup.setClickable(true);
+		versionCheckLinearViewGroup.setFocusable(true);
+		versionCheckLinearViewGroup.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				Toast.makeText(getActivity(), "当前版本为最新版本",
+				Toast.LENGTH_SHORT).show();
+
+			}
+			
+		});
+		
+		
+		//关于监听事件设置
+		View aboutLinearViewGroup = (View)viewGroup.findViewById(R.id.aboutInFragmentSet);
+		aboutLinearViewGroup.setClickable(true);
+		aboutLinearViewGroup.setFocusable(true);
+		aboutLinearViewGroup.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				final String Target_Action = "com.example.kedong.FragmentSet.AboutActivity";
+				Intent intent = new Intent();
+				intent.setAction(Target_Action);
+
+				startActivityForResult(intent,1);
+
+			}
+			
+		});
+		
+		
+		//帮助监听事件设置
+		View helpLinearViewGroup = (View)viewGroup.findViewById(R.id.helpInFragmentSet);
+		helpLinearViewGroup.setClickable(true);
+		helpLinearViewGroup.setFocusable(true);
+		helpLinearViewGroup.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				final String Target_Action = "com.example.kedong.FragmentSet.HelpActivity";
+				Intent intent = new Intent();
+				intent.setAction(Target_Action);
+
+				startActivityForResult(intent,1);
+
+			}
+			
+		});
+		
 		Log.d(TAG, "-------onCreateView------");		
-		return inflater.inflate(R.layout.fragment_set, container, false);
+		return viewGroup;
 	}
 	
 	@Override

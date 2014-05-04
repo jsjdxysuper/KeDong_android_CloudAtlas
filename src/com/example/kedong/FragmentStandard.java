@@ -45,7 +45,7 @@ public class FragmentStandard extends Fragment {
 			contents.add(map1);
 		}
 		MySimpleAdapter adapter = new MySimpleAdapter(getActivity(),
-				(List<Map<String, Object>>) contents, R.layout.listitem,
+				(List<Map<String, Object>>) contents, R.layout.standard_listitem,
 				new String[] { "NAME", "CAPACITY", "MONTHPOWER","LOADRATE","USEDHOURS" },
 				new int[] {
 						R.id.listitem_name, R.id.listitem_capacity, R.id.listitem_monthpower,
@@ -61,41 +61,42 @@ public class FragmentStandard extends Fragment {
 	}
 	
 	
-	private class MySimpleAdapter extends SimpleAdapter{
-
-		public MySimpleAdapter(Context context,
-				List<? extends Map<String, ?>> data, int resource,
-				String[] from, int[] to) {
-			super(context, data, resource, from, to);
-			// TODO Auto-generated constructor stub
-		}
-		
-		
-		 @Override  
-		    public View getView(final int position, View convertView, ViewGroup parent) {  
-		        // TODO Auto-generated method stub  
-		        // listview每次得到一个item，都要view去绘制，通过getView方法得到view  
-		        // position为item的序号  
-		        View view = null;  
-		        if (convertView != null) {  
-		            view = convertView;  
-		            // 使用缓存的view,节约内存  
-		            // 当listview的item过多时，拖动会遮住一部分item，被遮住的item的view就是convertView保存着。  
-		            // 当滚动条回到之前被遮住的item时，直接使用convertView，而不必再去new view()  
-		  
-		        } else {  
-		            view = super.getView(position, convertView, parent);  
-		  
-		        }  
-		  
-		        int[] colors = { Color.WHITE, Color.rgb(219, 238, 244) };//RGB颜色  
-		  
-		        view.setBackgroundColor(colors[position % 2]);// 每隔item之间颜色不同  
-		  
-		        return super.getView(position, view, parent);  
-		    }  
-	}
-	
+//	private class MySimpleAdapter extends SimpleAdapter{
+//
+//		public MySimpleAdapter(Context context,
+//				List<? extends Map<String, ?>> data, int resource,
+//				String[] from, int[] to) {
+//			super(context, data, resource, from, to);
+//			// TODO Auto-generated constructor stub
+//		}
+//		
+//		
+//		@Override  
+//	    public View getView(final int position, View convertView, ViewGroup parent) {  
+//	        // TODO Auto-generated method stub  
+//	        // listview每次得到一个item，都要view去绘制，通过getView方法得到view  
+//	        // position为item的序号  
+//	        View view = null;  
+//	        if (convertView != null) {  
+//	            view = convertView;  
+//	            // 使用缓存的view,节约内存  
+//	            // 当listview的item过多时，拖动会遮住一部分item，被遮住的item的view就是convertView保存着。  
+//	            // 当滚动条回到之前被遮住的item时，直接使用convertView，而不必再去new view()  
+//	  
+//	        } else {  
+//	            view = super.getView(position, convertView, parent);  
+//	  
+//	        }  
+//	  
+//	        //实现条纹效果
+//	        int[] colors = { Color.WHITE, Color.rgb(219, 238, 244) };//RGB颜色  
+//	  
+//	        view.setBackgroundColor(colors[position % 2]);// 每隔item之间颜色不同  
+//	  
+//	        return super.getView(position, view, parent);  
+//	    }  
+//	}
+	//动态计算listview的总高度，这样就可以把多个listview放入scrollview了
     public static class Utility {
         public static void setListViewHeightBasedOnChildren(ListView listView) {
             ListAdapter listAdapter = listView.getAdapter(); 

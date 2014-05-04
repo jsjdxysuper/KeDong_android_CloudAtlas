@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridViewitem"
+    android:layout_height="70dp"
+    android:layout_width="70dp"
+    android:orientation="vertical"
+    android:background="@drawable/frame_rectangle_black9patch"
+    >"
+
+	<TextView
+	    android:id="@+id/textViewInItem"
+	    android:textColor="#ffffff"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:gravity="center_vertical|center_horizontal"
+	    android:padding="3dp"
+	    android:textSize="20sp"
+	    />
+	<ImageView 
+	    android:id="@+id/imageViewInItem"
+	    android:layout_width="20dp"
+	    android:layout_height="20dp"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentBottom="true"
+	    android:src="@drawable/cross_black_icon"
+	    />"
+</RelativeLayout>

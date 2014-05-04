@@ -147,7 +147,7 @@ public class PlantsActivity extends FragmentActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				final String Target_Action = "com.example.kedong.MyMainActivity.AddPlants";
+				final String Target_Action = "com.example.kedong.Header.AddPlantsActivity";
 				Intent intent = new Intent();
 				intent.setAction(Target_Action);
 
