@@ -12,12 +12,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ToggleButton;
@@ -30,7 +32,7 @@ public class AddPlantsActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		LayoutInflater inflater = getLayoutInflater();
 		ViewGroup viewGroup = (ViewGroup)inflater.inflate(R.layout.add_plants_gridview_main, null);
 		ArrayList<String> strs = new ArrayList<String>();
@@ -64,8 +66,8 @@ public class AddPlantsActivity extends Activity {
 		
 		
 		
-		ToggleButton editImageButton = (ToggleButton)viewGroup.findViewById(R.id.editImageButton);
-		editImageButton.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+		ToggleButton editPlantsInAddPlantsActivity = (ToggleButton)viewGroup.findViewById(R.id.editPlantsInAddPlantsActivity);
+		editPlantsInAddPlantsActivity.setOnCheckedChangeListener(new OnCheckedChangeListener(){
 
 			@Override
 			public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
@@ -75,6 +77,23 @@ public class AddPlantsActivity extends Activity {
 				else
 					adapter.cancelEditAll();
 			}
+		});
+		
+		
+		ImageView cancelInAddPlantsActivity = (ImageView)viewGroup.findViewById(R.id.cancelInAddPlantsActivity);
+		cancelInAddPlantsActivity.setClickable(true);
+		cancelInAddPlantsActivity.setFocusable(true);
+		cancelInAddPlantsActivity.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = getIntent();
+				intent.putExtra("PlantList", "aaa");
+				AddPlantsActivity.this.setResult(1, intent);
+				AddPlantsActivity.this.finish();
+			}
+			
 		});
 		setContentView(viewGroup);
 

@@ -10,7 +10,7 @@
 	    android:id="@+id/dataFragmentInPlantsFragment"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:background="@drawable/wind_place1"
+        android:background="@drawable/power_plant9"
         android:layout_weight="11"
         >
         

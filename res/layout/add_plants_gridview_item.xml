@@ -5,7 +5,9 @@
     android:layout_width="70dp"
     android:orientation="vertical"
     android:background="@drawable/frame_rectangle_black9patch"
-    >"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    >
 
 	<TextView
 	    android:id="@+id/textViewInItem"
@@ -23,5 +25,5 @@
 	    android:layout_alignParentLeft="true"
 	    android:layout_alignParentBottom="true"
 	    android:src="@drawable/cross_black_icon"
-	    />"
+	    />
 </RelativeLayout>

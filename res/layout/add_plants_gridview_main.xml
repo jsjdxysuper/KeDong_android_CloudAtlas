@@ -6,6 +6,49 @@
     tools:context=".AddPlantsActivity" 
     android:orientation="vertical"
     >
+    
+
+   <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="@drawable/action_bar1"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        >
+        
+        <ImageView 
+            android:id="@+id/cancelInAddPlantsActivity"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:clickable="true"
+            android:src="@drawable/left_arrow_white"
+            />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="电厂管理"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"/>
+        <ToggleButton 
+            android:id="@+id/editPlantsInAddPlantsActivity"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center_horizontal|center_vertical"
+            android:background="@drawable/editstyle_in_plants_add_activity_header"
+            android:textOff=""
+       		android:textOn=""
+            />
+    </RelativeLayout>
+        
    <GridView
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
@@ -13,13 +56,13 @@
        android:verticalSpacing="3dp"
        android:horizontalSpacing="3dp"
        android:numColumns="3"
+       android:paddingLeft="10dp"
+       android:paddingRight="10dp"
        ></GridView>
-   <ToggleButton 
-       android:textOff="编辑"
-       android:textOn="撤销"
-       android:id="@+id/editImageButton"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:clickable="true"
-       />
+ 
 </LinearLayout>
+
+
+
+
+

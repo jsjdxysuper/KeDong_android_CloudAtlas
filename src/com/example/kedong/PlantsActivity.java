@@ -86,10 +86,17 @@ public class PlantsActivity extends FragmentActivity {
 		((TextView)(tempViewGroup.findViewById(R.id.unitPowerInPlantsFragment4))).setText("ÌúÁë£º36");
 		((TextView)(tempViewGroup.findViewById(R.id.yestodayPowerInPlantsFragment))).setText("×òÌì£º2100");
 		((TextView)(tempViewGroup.findViewById(R.id.befYestodayPowerInPlantsFragment))).setText("Ç°Ìì£º2090");
-		tempViewGroup.findViewById(R.id.dataFragmentInPlantsFragment).setBackgroundResource(R.drawable.wind_place2);
+		tempViewGroup.findViewById(R.id.dataFragmentInPlantsFragment).setBackgroundResource(R.drawable.power_plant6);
+		
 		pageViewsList.add(tempViewGroup);
-		pageViewsList.add(inflater.inflate(R.layout.fragment_oneplant, null));
-		pageViewsList.add(inflater.inflate(R.layout.fragment_oneplant, null));
+		
+		ViewGroup tempViewGroup1 = (ViewGroup)inflater.inflate(R.layout.fragment_oneplant, null);
+		tempViewGroup1.findViewById(R.id.dataFragmentInPlantsFragment).setBackgroundResource(R.drawable.power_plant10);
+		pageViewsList.add(tempViewGroup1);
+		
+		ViewGroup tempViewGroup2 = (ViewGroup)inflater.inflate(R.layout.fragment_oneplant, null);
+		tempViewGroup2.findViewById(R.id.dataFragmentInPlantsFragment).setBackgroundResource(R.drawable.power_plant11);
+		pageViewsList.add(tempViewGroup2);
 		pageViewsList.add(inflater.inflate(R.layout.fragment_oneplant, null));	
 		
       
@@ -147,11 +154,11 @@ public class PlantsActivity extends FragmentActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				final String Target_Action = "com.example.kedong.Header.AddPlantsActivity";
-				Intent intent = new Intent();
-				intent.setAction(Target_Action);
+//				final String Target_Action = "com.example.kedong.Header.AddPlantsActivity";
+				Intent intent = new Intent(PlantsActivity.this,AddPlantsActivity.class);
+//				intent.setAction(Target_Action);
 
-				startActivity(intent);
+				startActivityForResult(intent,1);
 			}
 			
 		});
