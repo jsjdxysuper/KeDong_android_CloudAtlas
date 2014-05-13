@@ -46,6 +46,7 @@ public class AddPlantsActivity extends Activity {
 		strs.add("");
 		
 		
+		//为GridView的最后一个加号item添加选择电厂时间，点击后跳入ListView的Activity选择要添加的电厂
 		adapter=new AddPlantsAdapter(strs, this);
 		gridView=(GridView) viewGroup.findViewById(R.id.grid);
 		gridView.setAdapter(adapter);
@@ -53,7 +54,7 @@ public class AddPlantsActivity extends Activity {
 		            @Override
 		            public void onItemClick(AdapterView<?> arg0, View arg1,   
 		                            int position, long arg3) {  
-		            	if(adapter.getCount()-1 == position)
+		            	if(adapter.isAddButton(position))
 		            	{
 		            		Toast.makeText(AddPlantsActivity.this, "添加电厂", Toast.LENGTH_SHORT).show();
 		            		Intent intent = new Intent(AddPlantsActivity.this,MyExpandableListViewTestActivity.class);
@@ -101,6 +102,10 @@ public class AddPlantsActivity extends Activity {
 	}
 
 
+	/**
+	 * 获得从MyExpandableListViewTestActivity活动选择要添加的电厂
+	 * key为"plant",如果value为MyExpandableListViewTestActivity.NOSELECTED代表什么都没选择就退回来了
+	 */
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent intent)
 	{
@@ -108,7 +113,8 @@ public class AddPlantsActivity extends Activity {
 		{
 			Bundle data = intent.getExtras();
 			String resultPlants = data.getString("plant");
-			adapter.addPlant(resultPlants);
+			if(resultPlants.compareTo(MyExpandableListViewTestActivity.NOSELECTED) != 0 )
+				adapter.addPlant(resultPlants);
 		}
 	}
 }

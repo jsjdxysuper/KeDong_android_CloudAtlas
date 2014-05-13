@@ -18,7 +18,9 @@ import android.widget.TextView;
 
 
 public class AddPlantsAdapter extends BaseAdapter {
+	//item上显示的String文本
 	private ArrayList<String> items;
+	//指示对应的条目是否被选中
 	private ArrayList<Boolean> isChice;
 	private Context context;
 	
@@ -140,12 +142,15 @@ public class AddPlantsAdapter extends BaseAdapter {
 	
 	public void addPlant(String str)
 	{
-		items.add(items.size()-1, str);
-		isChice.add(items.size()-1, false);
-		this.notifyDataSetChanged();
+		if(!items.contains(str)){
+			items.add(items.size()-1, str);
+			isChice.add(items.size()-1, false);
+			this.notifyDataSetChanged();
+		}
+
 	}
 	
-	private boolean isAddButton(int position)
+	public boolean isAddButton(int position)
 	{
 		if(items.get(position) == "")
 			return true;

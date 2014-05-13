@@ -8,11 +8,14 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AbsListView;
 import android.widget.BaseExpandableListAdapter;
@@ -25,12 +28,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.os.Build;
 
+
 public class MyExpandableListViewTestActivity extends Activity {
 
 	ExpandableListAdapter adapter;
+	public static final String NOSELECTED = "NOSELECTED"; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_my_expandable_list_view_test);
 
 		
@@ -167,6 +173,22 @@ public class MyExpandableListViewTestActivity extends Activity {
 			}
 		});
 
+		//设置header中的返回按钮的监听事件，如果按返回按钮，什么也没有添加
+		ImageView imageView = (ImageView) findViewById(R.id.cancelInExpandableListViewActivity);
+		imageView.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = getIntent();
+				intent.putExtra("plant", NOSELECTED);
+				MyExpandableListViewTestActivity.this.setResult(0, intent);
+				MyExpandableListViewTestActivity.this.finish();
+			}
+			
+		});
+		
+		
 //		expandListView
 //		expandListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 //			
@@ -180,6 +202,32 @@ public class MyExpandableListViewTestActivity extends Activity {
 
 	}
 
-
+	public boolean onKeyDown(int keyCode, KeyEvent event)
+	{
+		if (keyCode == KeyEvent.KEYCODE_BACK )
+		{
+//			// 创建退出对话框
+//			AlertDialog isExit = new AlertDialog.Builder(this).create();
+//			// 设置对话框标题
+//			isExit.setTitle("系统提示");
+//			// 设置对话框消息
+//			isExit.setMessage("确定要退出吗");
+//			// 添加选择按钮并注册监听
+//			isExit.setButton("确定", listener);
+//			isExit.setButton2("取消", listener);
+//			// 显示对话框
+//			isExit.show();
+			
+			Intent intent = getIntent();
+			intent.putExtra("plant", "NOPLANTSELECT");
+			MyExpandableListViewTestActivity.this.setResult(0, intent);
+			MyExpandableListViewTestActivity.this.finish();
+			
+			return false;
+		}
+		
+		return false;
+		
+	}
 
 }
